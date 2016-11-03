@@ -1,8 +1,8 @@
 # Cek-Kamus
-Cek-Kamus adalah sebuah sebuah program sederhana untuk mencari apakah sebuah kata dalam file terjemahan berekstensi PO **tidak** termasuk ke dalam Kamus Besar Bahasa Indonesia.
+Cek-Kamus adalah sebuah sebuah program Pyhton sederhana untuk mencari apakah sebuah kata dalam file terjemahan berekstensi PO **tidak** termasuk ke dalam Kamus Besar Bahasa Indonesia (KBBI).
 
 ###Detail
-Cek-Kamus akan membaca msgstr pada file po, kemudian mencari asal kata tersebut, setelah ditemukan kata tersebut akan dicek apakah terdapat dalam KBBI. Jika tidak ada dalam KBBI, maka program akan mengeluarkan sebuah *output* berupa msgstr beserta kata tersebut. Mohon diperhatikan program ini memakai skrip sederhana sehingga masih membutuhkan banyak perubahan untuk ke depannya.
+Cek-Kamus akan membaca msgstr pada file po, kemudian mencari asal kata tersebut, setelah ditemukan kata tersebut akan dicek apakah terdapat dalam KBBI. Jika tidak ada dalam KBBI, maka program akan mengeluarkan sebuah *output* berupa msgstr beserta kata tersebut. Mohon diperhatikan bahwa program ini memakai skrip sederhana sehingga masih membutuhkan banyak perubahan untuk ke depannya.
 
 ###Syarat Kondisi
 - Python 3.x
