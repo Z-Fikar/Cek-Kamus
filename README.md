@@ -10,7 +10,11 @@ Cek-Kamus akan membaca msgstr pada file po, kemudian mencari asal kata tersebut,
 - paket [Pysastrawi](https://github.com/har07/PySastrawi)
 
 ###Penggunaan
-`python cekkamus.py alamat/ke/file.po`
+```
+
+python cekkamus.py alamat/ke/file.po
+
+```
 
 ###Penghargaan
 Penghargaan dan pujian diberikan kedapa orang-orang dibawah ini karena tanpa mereka, program ini tidak akan pernah ~~selesai~~ tercipta.
