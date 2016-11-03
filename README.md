@@ -17,7 +17,7 @@ python cekkamus.py alamat/ke/file.po
 ```
 
 ###Penghargaan
-Penghargaan dan pujian diberikan kedapa orang-orang dibawah ini karena tanpa mereka, program ini tidak akan pernah ~~selesai~~ tercipta.
+Penghargaan dan pujian diberikan kepada orang-orang dibawah ini karena tanpa mereka, program ini tidak akan pernah ~~selesai~~ tercipta.
 - [John Vandenberg](https://github.com/jayvdb) dan tim BesutKode lainnya.
 - [Mamat Rahmat](https://github.com/mamat-rahmat), Program ini berdasarkan program yang dia buat. cek [disini](https://github.com/mamat-rahmat/checker_id)
 
