@@ -6,11 +6,12 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 
-def cekkamus(kata):
+def cekkamus():
     with open ('Kamus.txt', 'r') as myfile:
         data=myfile.readlines()
     return data
 
+    
 def main(alamat):
     hitung=0
     print 'Memproses :',alamat
@@ -19,14 +20,42 @@ def main(alamat):
     for entry in po:
         kalimat = stemmer.stem(entry.msgstr.encode('utf-8')).split(' ')
         for kata in kalimat:
-            if kata and all(kata.lower() != (kamus.split('\n'))[0] for kamus in cekkamus(kata)):
-                hitung+=1
-                print 'Kesalahan ke-%d'%hitung
-                print 'msgstr :',entry.msgstr
-                print 'kata   :',kata
-                print
+            try:
+                if kata and all(kata.lower() != (kamus.split('\n'))[0] for kamus in cekkamus()):
+                    print 'msgstr :',entry.msgstr
+                    print 'kata   :',kata
+                    dekat=[]
+                    depan=[]
+                    belakang=[]
+                    for kamus in cekkamus():
+                        lema=(kamus.split('\n'))[0]
+                        if kata in lema:
+                            if lema[:len(kata)]==kata and len(lema)<=(len(kata)+1):
+                                dekat.append(lema)
+                        for i in range(3,len(kata)+1):
+                            awal=stemmer.stem(kata[:i])
+                            #akhir=stemmer.stem(kata[i:])
+                            if awal==lema: #or akhir==lema:
+                                string=kata[:i]+' '+kata[i:]
+                                if string not in depan:
+                                    depan.append(string)
+                        for j in range(0,len(kata)-2):
+                            awal=stemmer.stem(kata[j:])
+                            #akhir=stemmer.stem(kata[i:])
+                            if awal==lema: #or akhir==lema:
+                                string=kata[:j]+' '+kata[j:]
+                                if string not in belakang:
+                                    belakang.append(string)
+                        
+                    if dekat!=[]:
+                        print '# Mendekati:\n#',dekat
+                    saran=list(set(depan) & set(belakang))
+                    if saran!=[]:
+                        print '# Apa yang anda maksud ini:\n#',sorted(saran)
+                    print
+            except KeyboardInterrupt:
+                print '# Dilewati\n'
     print '-'*50
-    print 'Jumlah Kesalahan:',hitung
     
 def awal():
     print '='*50
