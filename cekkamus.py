@@ -34,15 +34,13 @@ def main(alamat):
                                 dekat.append(lema)
                         for i in range(3,len(kata)+1):
                             awal=stemmer.stem(kata[:i])
-                            #akhir=stemmer.stem(kata[i:])
-                            if awal==lema: #or akhir==lema:
+                            if awal==lema:
                                 string=kata[:i]+' '+kata[i:]
                                 if string not in depan:
                                     depan.append(string)
                         for j in range(0,len(kata)-2):
-                            awal=stemmer.stem(kata[j:])
-                            #akhir=stemmer.stem(kata[i:])
-                            if awal==lema: #or akhir==lema:
+                            awal=stemmer.stem(kata[j:]:
+                            if awal==lema:
                                 string=kata[:j]+' '+kata[j:]
                                 if string not in belakang:
                                     belakang.append(string)
